@@ -17,9 +17,9 @@ jobs:
       postgres:
         image: postgres:16
         env:
-          POSTGRES_DB:       controlemocional_test_db
-          POSTGRES_USER:     controlemocional_user
-          POSTGRES_PASSWORD: controlemocional_pass_123
+          POSTGRES_DB:       therappy_db
+          POSTGRES_USER:     therappy_user
+          POSTGRES_PASSWORD: therappy_pass
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
