@@ -97,7 +97,7 @@ jobs:
 
             echo "── 2. Instalando dependencias ──"
             # Actualiza dependencias usando el pip de tu entorno virtual
-            sudo -u controlEmocional $PROJECT_DIR/.venv/bin/pip install -r requirements.txt
+            sudo -u root $PROJECT_DIR/.venv/bin/pip install -r requirements.txt
 
             echo "── 3. Aplicando migraciones ──"
             $PROJECT_DIR/.venv/bin/python3 manage.py migrate --noinput
