@@ -1,0 +1,1488 @@
+{
+  "info": {
+    "_postman_id": "403fefdd-9c61-4849-896b-a58683e98d26",
+    "name": "controlEmocional",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44963106"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "POST Register",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"miky\",\n    \"email\": \"miky@example.com\",\n    \"password\": \"testpassword123\",\n    \"password2\": \"testpassword123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/register/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "register",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"Admin1234!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "login",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "GET List Users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create Users",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"josue\",\n    \"email\": \"josue@test.com\",\n    \"password\": \"josuetestpassword1234\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Retrieve Users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/5/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "5",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update Users",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"josuemerino\",\n    \"email\": \"updated@test.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/5/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "5",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Users",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/6/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "6",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Psicologos",
+      "item": [
+        {
+          "name": "GET List Psicologos",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/psicologos/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "psicologos",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create Psicologos",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"usuario\": 4,\n    \"especialidad\": \"Psicologia\",\n    \"experiencia\": 2,\n    \"universidad\": \"ESPE\",\n    \"licencia_profesional\": \"True\",\n    \"descripcion\": \"Diagnostico de pacientes jovenes y adultos\"\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/psicologos/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "psicologos",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Retrieve Psicologos",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/psicologos/4/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "psicologos",
+                "4",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update Psicologos",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"usuario\": 2,\n    \"especialidad\": \"Psicologia Clinica infantil\",\n    \"experiencia\": 4,\n    \"universidad\": \"Universidad UTE\",\n    \"licencia_profesional\": \"True\",\n    \"descripcion\": \"Diagnostico de pacientes jovenes\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/psicologos/3/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "psicologos",
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Psicologos",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/psicologos/4/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "psicologos",
+                "4",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Citas",
+      "item": [
+        {
+          "name": "GET List Citas",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/citas/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "citas",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create Citas",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"paciente\": 2,\n    \"psicologo\": 3,\n    \"fecha\": \"2026-06-15\",\n    \"hora\": \"00:00\",\n    \"motivo\": \"Crisis de ansiedad\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/citas/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "citas",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Retrieve Citas",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/citas/3/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "citas",
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update Citas",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"paciente\": 1,\n    \"psicologo\": 1,\n    \"fecha\": \"2026-06-08\",\n    \"hora\": \"00:00\",\n    \"motivo\": \"Crisis de ansiedad severa\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/citas/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "citas",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Citas",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/citas/3/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "citas",
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Historiales",
+      "item": [
+        {
+          "name": "GET List Historiales",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/historiales/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "historiales",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create Historiales",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"paciente\": 4,\n    \"diagnostico\": \"Ansiedad y Hipersensibilidad\",\n    \"tratamiento\": \"Ejercicios relajacion e terapia psicologica semanal\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/historiales/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "historiales",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Retrieve Historiales",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/historiales/4/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "historiales",
+                "4",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update Historiales",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"paciente\": 4,\n    \"diagnostico\": \"Depresion\",\n    \"tratamiento\": \"Viaje con familiares\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/historiales/4/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "historiales",
+                "4",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Historiales",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/historiales/4/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "historiales",
+                "4",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Emociones",
+      "item": [
+        {
+          "name": "GET List Emociones",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/emociones/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "emociones",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create Emociones",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"usuario\": 4,\n    \"emocion\": \"Depresion\",\n    \"intensidad\": 5\n    \n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/emociones/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "emociones",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Retrieve Emociones",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/emociones/3/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "emociones",
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update Emociones",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"usuario\": 4,\n    \"emocion\": \"Triste\",\n    \"intensidad\": 9\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/emociones/3/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "emociones",
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Emociones",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/emociones/3/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "emociones",
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Recomendaciones",
+      "item": [
+        {
+          "name": "GET List Recomendaciones",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/recomendaciones/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "recomendaciones",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create Recomendaciones",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"usuario\": 2,\n    \"descripcion\": \"Respiracion lenta\",\n    \"tipo\": \"Individual\",\n    \"titulo\": \"Respiracion\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/recomendaciones/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "recomendaciones",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Retrieve Recomendaciones",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/recomendaciones/3/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "recomendaciones",
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update Recomendaciones",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"usuario\": 1,\n    \"descripcion\": \"Respiracion constante\",\n    \"tipo\": \"Individual\",\n    \"titulo\": \"Respiracion\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/recomendaciones/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "recomendaciones",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Recomendaciones",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/recomendaciones/3/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "recomendaciones",
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Perfiles Psicologicos",
+      "item": [
+        {
+          "name": "GET List Perfiles-psicologicos",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/perfiles-psicologicos/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "perfiles-psicologicos",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create Perfiles-psicologicos",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"usuario\": 2,\n    \"rasgos\": \"Extrovertido\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/perfiles-psicologicos/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "perfiles-psicologicos",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Retrieve Perfiles-psicologicos",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/perfiles-psicologicos/3/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "perfiles-psicologicos",
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update Perfiles-psicologicos",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"usuario\": 1,\n    \"rasgos\": \"Introvertido\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/perfiles-psicologicos/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "perfiles-psicologicos",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Perfiles-psicologicos",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/perfiles-psicologicos/3/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "perfiles-psicologicos",
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Chats",
+      "item": [
+        {
+          "name": "GET List Chats",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/chats/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "chats",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create Chats",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"paciente\": 2,\n    \"psicologo\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/chats/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "chats",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Retrieve Chats",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/chats/3/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "chats",
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update Chats",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"paciente\": 1,\n    \"psicologo\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/chats/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "chats",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Chats",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/chats/3/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "chats",
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Mensajes",
+      "item": [
+        {
+          "name": "GET List Mensajes",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/mensajes/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "mensajes",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create Mensajes",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"chat\": 1,\n    \"emisor\": 2,\n    \"remitente\": 1,\n    \"mensaje\": \"bien y tu\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/mensajes/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "mensajes",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Retrieve Mensajes",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/mensajes/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "mensajes",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update Mensajes",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"chat\": 1,\n    \"emisor\": 1,\n    \"remitente\": 2,\n    \"mensaje\": \"Hola, ¿Que tal?\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/mensajes/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "mensajes",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Mensajes",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/mensajes/2/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "mensajes",
+                "2",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000/api"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
