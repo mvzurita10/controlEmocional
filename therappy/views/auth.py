@@ -9,6 +9,7 @@ from therappy.serializers.user import RegisterSerializer
 
 class RegisterView(APIView):
     permission_classes = [AllowAny]
+    authentication_classes = [] 
 
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
@@ -16,7 +17,7 @@ class RegisterView(APIView):
         user    = serializer.save()
         refresh = RefreshToken.for_user(user)
         return Response({
-            'access':   str(refresh.access_token),
+            'access':   str(refresh.access_token), 
             'refresh':  str(refresh),
             'user_id':  user.id,
             'username': user.username,
