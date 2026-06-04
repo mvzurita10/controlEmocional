@@ -2,6 +2,7 @@
 from datetime import timedelta
 from pathlib import Path
 from decouple import config, Csv
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -64,6 +65,7 @@ TIME_ZONE          = 'America/Guayaquil'
 USE_I18N           = True
 USE_TZ             = True
 STATIC_URL         = '/static/'
+STATIC_ROOT       = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
