@@ -27,13 +27,18 @@ class RegisterSerializer(serializers.Serializer):
         return User.objects.create_user(**validated_data)
 
 class UserSerializer(serializers.ModelSerializer):
+    is_psicologo = serializers.SerializerMethodField()
+
     class Meta:
         model  = User
         fields = [
             'id', 'username', 'email', 'first_name', 'last_name',
-            'is_staff', 'is_active', 'date_joined'
+            'is_staff', 'is_active', 'date_joined', 'is_psicologo'
         ]
-        read_only_fields = ['id', 'date_joined']
+        read_only_fields = ['id', 'date_joined', 'is_psicologo']
+
+    def get_is_psicologo(self, obj):
+        return hasattr(obj, 'psicologo')
 
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:

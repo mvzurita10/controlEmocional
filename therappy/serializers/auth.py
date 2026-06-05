@@ -7,6 +7,7 @@ class CustomTokenSerializer(TokenObtainPairSerializer):
         token['username'] = user.username
         token['email']    = user.email
         token['is_staff'] = user.is_staff
+        token['is_psicologo'] = hasattr(user, 'psicologo')
         return token
 
     def validate(self, attrs):
@@ -15,6 +16,7 @@ class CustomTokenSerializer(TokenObtainPairSerializer):
         data['username'] = self.user.username
         data['email']    = self.user.email
         data['is_staff'] = self.user.is_staff
+        data['is_psicologo'] = hasattr(self.user, 'psicologo')
         return data
 
 from rest_framework_simplejwt.views import TokenObtainPairView

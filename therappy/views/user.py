@@ -1,19 +1,20 @@
 from rest_framework import viewsets, permissions, status
 from rest_framework.decorators import action
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from therappy.permissions import IsAdminOrPsicologoOrReadOnly
 from django.contrib.auth.models import User
 from therappy.serializers.user import UserSerializer, UserProfileSerializer, ChangePasswordSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated, IsAdminOrPsicologoOrReadOnly]
 
     def get_permissions(self):
-        if self.action in ['create', 'destroy']:
-            return [permissions.IsAdminUser()]
-        elif self.action in ['me', 'change_password']:
+        if self.action in ['me', 'change_password']:
             return [permissions.IsAuthenticated()]
-        return [permissions.IsAdminUser()]
+        return [IsAdminOrPsicologoOrReadOnly()]
 
     @action(detail=False, methods=['get', 'put', 'patch'])
     def me(self, request):

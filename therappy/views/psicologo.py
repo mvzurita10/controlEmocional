@@ -1,4 +1,6 @@
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
+from therappy.permissions import IsAdminOrPsicologoOrReadOnly
 from therappy.models.psicologo import Psicologo
 from therappy.serializers.psicologo import PsicologoSerializer
 
@@ -7,3 +9,4 @@ class PsicologoViewSet(viewsets.ModelViewSet):
     serializer_class = PsicologoSerializer
     search_fields = ['especialidad', 'universidad']
     filterset_fields = ['disponible']
+    permission_classes = [IsAuthenticated, IsAdminOrPsicologoOrReadOnly]

@@ -9,7 +9,7 @@ from therappy.serializers.user import RegisterSerializer
 
 class RegisterView(APIView):
     permission_classes = [AllowAny]
-    authentication_classes = [] 
+    authentication_classes = [] # Esto permite el registro sin token
 
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
@@ -17,12 +17,13 @@ class RegisterView(APIView):
         user    = serializer.save()
         refresh = RefreshToken.for_user(user)
         return Response({
-            'access':   str(refresh.access_token), 
+            'access':   str(refresh.access_token),
             'refresh':  str(refresh),
             'user_id':  user.id,
             'username': user.username,
             'email':    user.email,
             'is_staff': user.is_staff,
+            'is_psicologo': hasattr(user, 'psicologo'),
         }, status=status.HTTP_201_CREATED)
 
 class LogoutView(APIView):
